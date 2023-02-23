@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.xiewenMapper">
+    <select id="tiaocha" resultType="com.pojo.xiewen">
+        select *
+        from xiewen
+        <where>
+            <if test="xinwen != null and xinwen != '' ">
+                and  xinwen like #{xinwen}
+            </if>
+
+            <if test="lanmu != null and lanmu != '' ">
+                and  lanmu like #{lanmu}
+            </if>
+        </where>
+
+    </select>
+</mapper>
